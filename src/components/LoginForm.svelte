@@ -1,12 +1,25 @@
 <script>
-  import {push} from "svelte-spa-router";
-
+  import { push } from "svelte-spa-router";
+  import {getContext} from "svelte";
+  
   let email = ""
   let password = "";
+  let errorMessage = "";
+
+  const poiService = getContext("PoiService");
 
   async function login() {
-    push("/donate");
+    let success = await poiService.login(email, password)
+    if (success) {
+      push("/pois");
+    } else {
+      email = "";
+      password = "";
+      errorMessage = "Invalid Credentials";
+    }
   }
+
+
 </script>
 
 <form on:submit|preventDefault={login}>
@@ -22,3 +35,8 @@
     <button class="button is-link">Log In</button>
   </div>
 </form>
+{#if errorMessage}
+  <div class="section">
+    {errorMessage}
+  </div>
+{/if}

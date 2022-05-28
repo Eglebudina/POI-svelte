@@ -2,6 +2,10 @@
   import trail from "/src/assets/trail.jpeg";
   import WelcomeNavigator from "../components/WelcomeNavigator.svelte";
   import TitleBar from "../components/TitleBar.svelte";
+  import {getContext} from "svelte";
+
+  const poiService = getContext("PoiService");
+  poiService.logout();
 </script>
 
 <div class="columns is-vcentered">

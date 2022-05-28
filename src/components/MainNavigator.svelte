@@ -1,5 +1,5 @@
 <div class="box has-text-centered columns m-2">
-  <a href="/#/poi" class="column is-4">
+  <a href="/#/pois" class="column is-4">
     <i class="fas fa-hiking fa-3x" style="color:rgb(153, 196, 74)"></i>
   </a>
   <a href="/#/report" class="column is-4">

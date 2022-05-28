@@ -1,25 +1,27 @@
-
 <script>
-  import {push} from "svelte-spa-router";
-
-  let email = ""
-  let password = "";
-
-  async function login() {
-    push("/poi");
-  }
+  import trail from "/src/assets/trail.jpeg";
+  import WelcomeNavigator from "../components/WelcomeNavigator.svelte";
+  import TitleBar from "../components/TitleBar.svelte";
+  import LoginForm from "../components/LoginForm.svelte";
 </script>
 
-<form on:submit|preventDefault={login}>
-  <div class="field">
-    <label class="label" for="email">Email</label>
-    <input bind:value={email} class="input" id="email" name="email"placeholder="Enter email" type="text">
+<div class="columns is-vcentered">
+  <div class="column is-two-thirds">
+    <TitleBar title={"Poi Inc."} subTitle={"Sign up or Log in"}/>
   </div>
-  <div class="field">
-    <label class="label" for="password">Password</label>
-    <input bind:value={password} class="input" id="password" name="password" placeholder="Enter Password" type="password">
+  <div class="column">
+    <WelcomeNavigator/>
   </div>
-  <div class="field is-grouped">
-    <button class="button is-link">Log In</button>
+</div>
+
+<div class="columns">
+  <div class="column has-text-centered">
+    <img alt="homer" src="{trail}" width="300">
   </div>
-</form>
+  <div class="column">
+    <div class="box">
+      <h1 class="title">Login</h1>
+      <LoginForm/>
+    </div>
+  </div>
+</div>

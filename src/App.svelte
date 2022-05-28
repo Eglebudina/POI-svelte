@@ -1,17 +1,20 @@
 <script>
-  import Main from "./pages/Main.svelte"
-  import Login from "./pages/Login.svelte"
-  import Signup from "./pages/Signup.svelte"
-  import Poi from "./pages/Poi.svelte";
+  import {setContext} from "svelte";
+  import {PoiService} from "./services/poi-service";
+  import Main from "./pages/Main.svelte";
+  import Login from "./pages/Login.svelte";
+  import Signup from "./pages/Signup.svelte";
   import Report from "./pages/Report.svelte";
+  import Pois from "./pages/Pois.svelte";
   import Router from "svelte-spa-router";
+  
+  setContext ("PoiService",new PoiService("http://localhost:4000"));
 
   let routes = {
     "/": Main,
     "/login": Login,
     "/signup": Signup,
-    "/main": Main,
-    "/poi": Poi,
+    "/pois": Pois,
     "/report": Report,
     "/logout": Main
   }

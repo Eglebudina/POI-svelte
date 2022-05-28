@@ -1,3 +1,4 @@
+
 <script>
   import hiker from "/src/assets/hiker-welcome.jpg";
   import WelcomeNavigator from "../components/WelcomeNavigator.svelte";
