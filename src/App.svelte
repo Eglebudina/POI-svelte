@@ -14,7 +14,7 @@
   import Charts from "./pages/Charts.svelte";
 
 
-  setContext("PoiService", new poiService("http://localhost:4000"));
+  setContext("PoiService", new poiService("https://powerful-cove-53286.herokuapp.com/"));
 
   let routes = {
     "/": Main,
