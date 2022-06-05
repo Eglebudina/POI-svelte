@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../.."
+	},
+	{
+		"path": "../../../donation-hapi-0-3-0"
+	}
+],
+  "settings": {
+    "git.ignoreLimitWarning": true
+  }
+}

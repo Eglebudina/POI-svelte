@@ -7,9 +7,9 @@
   let email = ""
   let password = "";
   let errorMessage = "";
-  
+
   const poiService = getContext("PoiService");
-  
+
   async function signup() {
     let success = await poiService.signup(firstName, lastName, email, password)
     if (success) {

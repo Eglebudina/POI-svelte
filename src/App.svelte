@@ -1,20 +1,33 @@
 <script>
   import {setContext} from "svelte";
-  import {PoiService} from "./services/poi-service";
-  import Main from "./pages/Main.svelte";
-  import Login from "./pages/Login.svelte";
-  import Signup from "./pages/Signup.svelte";
+  import {poiService} from "./services/poi-service";
+  import Main from "./pages/Main.svelte"
+  import Login from "./pages/Login.svelte"
+  import Signup from "./pages/Signup.svelte"
   import Report from "./pages/Report.svelte";
-  import Pois from "./pages/Pois.svelte";
+  import Dashboard from "./pages/Dashboard.svelte";
+  import Place from "./pages/Place.svelte";
+  import Category from "./pages/Category.svelte"
+  import Map from "./pages/Map.svelte";
+  import Gallery from "./pages/Gallery.svelte"
   import Router from "svelte-spa-router";
-  
-  setContext ("PoiService",new PoiService("http://localhost:4000"));
+  import Charts from "./pages/Charts.svelte";
+
+
+  setContext("PoiService", new poiService("http://localhost:4000"));
 
   let routes = {
     "/": Main,
     "/login": Login,
     "/signup": Signup,
-    "/pois": Pois,
+    "/pois": Dashboard,
+    "/place": Place,
+    "/place/*": Place,
+    "/category": Category,
+    "/category/*": Category,
+    "/map": Map,
+    "/gallery": Gallery,
+    "/charts": Charts,
     "/report": Report,
     "/logout": Main
   }
